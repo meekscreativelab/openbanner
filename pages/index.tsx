@@ -11,8 +11,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        <h1 className="font-extrabold text-5xl">
+          Welcome to <a href="https://nextjs.org">OpenBanner</a>
         </h1>
       </main>
     </div>
