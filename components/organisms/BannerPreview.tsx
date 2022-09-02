@@ -47,7 +47,7 @@ const BannerPreview = () => {
   };
 
   return (
-    <div className="w-full flex flex-col space-y-6 items-center">
+    <div className="w-full flex flex-col space-y-8 items-center">
       <div
         className={clsx(
           {
@@ -106,13 +106,13 @@ const BannerPreview = () => {
           ref={printRef}
           className={clsx(
             banner_background,
-            'relative w-full shadow h-72 flex flex-col items-center justify-center p-8 text-center'
+            'relative w-full shadow h-[17rem] flex flex-col items-center justify-center p-8 text-center'
           )}
         >
-          <div className="bg-white/20 flex items-center justify-center text-[0.65rem] absolute top-3 right-3 rounded-full py-0.5 px-2">
+          <div className="bg-white/20 flex items-center justify-center text-sm absolute top-3 right-3 rounded-full py-0.5 px-3">
             Banner by openbanner.co
           </div>
-          <div className="text-[0.65rem] absolute top-3 left-3">
+          <div className="text-sm absolute top-3 left-3">
             Last updated: {new Date().toLocaleString('default', { month: 'long', year: 'numeric' })}
           </div>
           <div>
@@ -127,24 +127,22 @@ const BannerPreview = () => {
               />
             )}
             <div className="space-y-2 max-w-sm">
-              <h2 className="text-2xl font-semibold">Hi there{your_name ? `, i'm ${your_name}` : ''}</h2>
+              <h2 className="text-3xl font-semibold">Hi there{your_name ? `, i'm ${your_name}` : ''}</h2>
               {friendly_introduction && (
-                <p className="text-md font-normal flex-wrap leading-tight opacity-90 text-sm">
-                  {friendly_introduction}
-                </p>
+                <p className="text-base font-normal flex-wrap leading-tight opacity-90">{friendly_introduction}</p>
               )}
               {current_mrr && (
-                <p className="text-md font-semibold flex-wrap leading-tight text-base">
+                <p className="text-base font-semibold flex-wrap leading-tight">
                   💸 Revenue: ${Intl.NumberFormat('en', { notation: 'compact' }).format(current_mrr)} MRR
                 </p>
               )}
-              <div className="absolute bottom-16 right-2 text-xs py-1 px-2 w-36">
+              <div className="absolute bottom-16 right-2 text-sm py-1 px-2 w-36">
                 <div>
                   Follow my journey{' '}
                   {goal_mrr ? `to $${Intl.NumberFormat('en', { notation: 'compact' }).format(goal_mrr)} MRR` : ''}
                 </div>
               </div>
-              <span className="absolute bottom-4 right-8">
+              <span className="absolute bottom-4 right-12">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/static/arrow.png" alt="arrow" style={{ width: 29, height: 45 }} />
               </span>
