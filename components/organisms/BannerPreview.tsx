@@ -1,23 +1,56 @@
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
+import html2canvas from 'html2canvas';
 import Image from 'next/image';
 import { BannerFormFields } from 'pages';
+import { useRef } from 'react';
 import { useFormContext } from 'react-hook-form';
 
 const BannerPreview = () => {
+  const printRef = useRef<HTMLDivElement>(null);
+
   const { watch } = useFormContext<BannerFormFields>();
 
   const { banner_background, project_logo, your_name, friendly_introduction, current_mrr, goal_mrr } = watch();
 
+  const handleDownloadImage = async () => {
+    const element = printRef.current;
+
+    if (element) {
+      const canvas = await html2canvas(element, {
+        scrollX: -window.scrollX,
+        scrollY: -window.scrollY,
+        windowWidth: document.documentElement.offsetWidth,
+        windowHeight: document.documentElement.offsetHeight,
+      });
+
+      const data = canvas.toDataURL('image/jpg');
+
+      const link = document.createElement('a');
+
+      if (typeof link.download === 'string') {
+        link.href = data;
+        link.download = 'image.jpg';
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        window.open(data);
+      }
+    }
+  };
+
   return (
     <div className="w-full flex flex-col space-y-6 items-center">
       <div
+        ref={printRef}
         className={clsx(
           banner_background,
           'relative w-full rounded-md shadow h-60 flex flex-col items-center justify-center p-8 text-center'
         )}
       >
-        <div className="bg-white/20 text-[0.65rem] absolute top-3 right-3 rounded-full py-0.5 px-2">
+        <div className="bg-white/20 flex items-center justify-center text-[0.65rem] absolute top-3 right-3 rounded-full py-0.5 px-2">
           Banner by openbanner.co
         </div>
         <div className="text-[0.65rem] absolute top-3 left-3">
@@ -71,6 +104,7 @@ const BannerPreview = () => {
       <button
         type="button"
         className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none"
+        onClick={handleDownloadImage}
       >
         <ArrowDownTrayIcon className="-ml-1 mr-3 h-5 w-5" />
         Generate Banner

@@ -9,16 +9,28 @@ export const App = ({ children }: Props) => {
     <div className="relative overflow-hidden">
       <header className="border-b border-gray-800/75">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="flex h-16 justify-between">
-            <div className="flex items-center space-x-4">
+          <div className="flex h-16 py-2 justify-between">
+            <div>
               <Link href="/">
                 <Logo />
               </Link>
-              <div className="text-sm text-gray-300">
+              <div className="text-xs text-gray-400 mt-0.5">
                 Simple informative twitter cover banner for those building in public
               </div>
             </div>
-            <div className="flex items-center space-x-4 text-gray-200 hover:text-white">
+            <div className="flex flex-1 items-center justify-end space-x-4 text-gray-200 hover:text-white">
+              <span className="text-gray-400 text-sm">
+                Built by{' '}
+                <Link
+                  className="text-gray-100 hover:text-gray-300"
+                  href="https://twitter.com/meekscreative"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  @meekscreative
+                </Link>
+              </span>
+              <span className="h-6 w-px bg-gray-700" aria-hidden="true"></span>
               <Link
                 href="https://github.com/meekscreativelab/openbanner"
                 target="_blank"
@@ -33,17 +45,6 @@ export const App = ({ children }: Props) => {
                   ></path>
                 </svg>
               </Link>
-              <span className="text-gray-400 text-sm">
-                Built by{' '}
-                <Link
-                  className="text-gray-100 hover:text-gray-300"
-                  href="https://twitter.com/meekscreative"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  @meekscreative
-                </Link>
-              </span>
             </div>
           </div>
         </div>
