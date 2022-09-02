@@ -42,7 +42,7 @@ export const BannerForm = ({ onSubmit }: BannerFormProps) => {
                 <RadioGroup.Option
                   key={color}
                   value={color}
-                  className={({ active, checked }) =>
+                  className={({ checked }) =>
                     clsx(
                       'ring-blue-600',
                       checked ? 'ring-2' : '',
@@ -67,7 +67,7 @@ export const BannerForm = ({ onSubmit }: BannerFormProps) => {
           return (
             <div>
               <div className="block text-sm font-medium">Product logo</div>
-              <label className="mt-2 cursor-pointer inline-flex items-center rounded-md border border-gray-700 border-transparent bg-gray-800 px-4 py-2 text-sm font-medium shadow-sm hover:bg-gray-700 focus:outline-none placeholder-gray-300">
+              <label className="mt-2 cursor-pointer inline-flex items-center rounded-md border border-gray-600/50 bg-gray-800 px-4 py-2 text-sm font-medium hover:bg-gray-700 focus:outline-none placeholder-gray-300">
                 <ArrowUpTrayIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
                 Upload image
                 <input

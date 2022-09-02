@@ -6,7 +6,7 @@ interface Props {
 
 export const App = ({ children }: Props) => {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden" onMouseLeave={() => console.log('Leave')}>
       <header className="border-b border-gray-800/75">
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex h-16 py-2 justify-between">
