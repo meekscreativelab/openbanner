@@ -42,6 +42,10 @@ const BannerPreview = () => {
       reset({
         banner_background: 'bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500',
         your_name: '',
+        friendly_introduction: '',
+        project_logo: '',
+        current_mrr: 0,
+        goal_mrr: 0,
       });
     }
   };
@@ -126,7 +130,7 @@ const BannerPreview = () => {
                 onLoad={() => URL.revokeObjectURL(project_logo.preview)}
               />
             )}
-            <div className="space-y-2 max-w-sm">
+            <div className="space-y-3 max-w-sm">
               <h2 className="text-3xl font-semibold">Hi there{your_name ? `, i'm ${your_name}` : ''}</h2>
               {friendly_introduction && (
                 <p className="text-base font-normal flex-wrap leading-tight opacity-90">{friendly_introduction}</p>
