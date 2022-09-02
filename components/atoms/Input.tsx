@@ -6,40 +6,48 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: boolean;
   helperText?: string;
+  leading?: string;
 }
 
 export const Input = forwardRef<HTMLInputElement, Props>(
-  ({ id, option, label, error, helperText, disabled, ...rest }, ref) => {
+  ({ id, option, label, error, helperText, disabled, leading, className, ...rest }, ref) => {
     return (
-      <>
-        <fieldset>
-          {label && (
-            <label htmlFor={id} className="text-sm text-gray-500">
-              {label}
-            </label>
+      <fieldset className="flex-1 text-left">
+        {label && (
+          <label htmlFor={id} className="block text-sm font-medium">
+            {label}
+          </label>
+        )}
+        <div className="mt-1 relative">
+          {leading && (
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <span className="text-gray-500 sm:text-sm">{leading}</span>
+            </div>
           )}
-          <div className="relative flex items-stretch flex-grow focus-within:z-10 mt-1">
-            <input
-              type="text"
-              id={id}
-              ref={ref}
-              disabled={disabled}
-              className="placeholder-gray-400 block w-full border border-gray-300 rounded-l py-1.5 px-3 focus:outline-none focus:ring-2 focus:z-10 focus:ring-blue-200 focus:border-blue-400 sm:text-sm disabled:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              {...rest}
-            />
-          </div>
-          {helperText && (
-            <p
-              className={clsx('mt-1 text-sm', {
-                ['text-red-600']: error,
-                ['text-gray-500']: !error,
-              })}
-            >
-              {helperText}
-            </p>
-          )}
-        </fieldset>
-      </>
+          <input
+            type="text"
+            id={id}
+            ref={ref}
+            disabled={disabled}
+            className={clsx(
+              'block w-full rounded-md bg-gray-800 border-gray-700 shadow-sm focus:border-blue-600 focus:ring-blue-600 sm:text-sm',
+              { ['pl-7']: leading },
+              className
+            )}
+            {...rest}
+          />
+        </div>
+        {helperText && (
+          <p
+            className={clsx('mt-1 text-sm', {
+              ['text-red-600']: error,
+              ['text-gray-500']: !error,
+            })}
+          >
+            {helperText}
+          </p>
+        )}
+      </fieldset>
     );
   }
 );
