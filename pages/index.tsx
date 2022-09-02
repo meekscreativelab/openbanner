@@ -3,6 +3,7 @@ import { BannerForm } from 'components/organisms';
 import BannerPreview from 'components/organisms/BannerPreview';
 import { App } from 'components/templates';
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import { FormProvider, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 
@@ -27,6 +28,37 @@ const Home: NextPage = () => {
 
   return (
     <App>
+      <Head>
+        <title>OpenBanner – Simple informative twitter cover banner for those building in public</title>
+        <meta
+          name="title"
+          content="OpenBanner – Simple informative twitter cover banner for those building in public"
+        />
+        <meta
+          name="description"
+          content="One click to instantly create beautiful informative Twitter banners to #buildinpublic ."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="OpenBanner – Simple informative twitter cover banner for those building in public"
+        />
+        <meta
+          property="og:description"
+          content="One click to instantly create beautiful informative Twitter banners to #buildinpublic ."
+        />
+        <meta property="og:image" content="https://openbanner.co/static/poster.png" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:title"
+          content="OpenBanner – Simple informative twitter cover banner for those building in public"
+        />
+        <meta
+          property="twitter:description"
+          content="One click to instantly create beautiful informative Twitter banners to #buildinpublic ."
+        />
+        <meta property="twitter:image" content="https://openbanner.co/static/poster.png" />
+      </Head>
       <FormProvider {...methods}>
         <main className="mx-auto mt-8 max-w-7xl px-4">
           <div className="lg:grid lg:grid-cols-12 lg:gap-16">
