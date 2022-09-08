@@ -6,3 +6,7 @@
 body > div:last-child > span + img {
   display: inline !important;
 }
+
+img {
+  display: initial !important;
+}

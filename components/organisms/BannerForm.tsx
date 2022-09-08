@@ -106,7 +106,7 @@ export const BannerForm = ({ onSubmit }: BannerFormProps) => {
       <Input
         id="current_mrr"
         type="number"
-        min="1"
+        min="0"
         step="any"
         label="Current MMR"
         leading="$"
@@ -118,7 +118,7 @@ export const BannerForm = ({ onSubmit }: BannerFormProps) => {
       <Input
         id="goal_mrr"
         type="number"
-        min="1"
+        min="0"
         step="any"
         label="Goal MMR"
         leading="$"
