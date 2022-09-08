@@ -36,7 +36,7 @@ const Home: NextPage = () => {
         />
         <meta
           name="description"
-          content="One click to instantly create beautiful informative Twitter banners to #buildinpublic ."
+          content="One click to instantly create beautiful informative Twitter banners to #buildinpublic."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -45,7 +45,7 @@ const Home: NextPage = () => {
         />
         <meta
           property="og:description"
-          content="One click to instantly create beautiful informative Twitter banners to #buildinpublic ."
+          content="One click to instantly create beautiful informative Twitter banners to #buildinpublic."
         />
         <meta property="og:image" content="https://openbanner.co/static/poster.png" />
         <meta property="twitter:card" content="summary_large_image" />
@@ -55,7 +55,7 @@ const Home: NextPage = () => {
         />
         <meta
           property="twitter:description"
-          content="One click to instantly create beautiful informative Twitter banners to #buildinpublic ."
+          content="One click to instantly create beautiful informative Twitter banners to #buildinpublic."
         />
         <meta property="twitter:image" content="https://openbanner.co/static/poster.png" />
       </Head>
