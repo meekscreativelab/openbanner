@@ -2,6 +2,7 @@ import { ArrowDownTrayIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { Link } from 'components/atoms';
 import html2canvas from 'html2canvas';
+import { usePlausible } from 'next-plausible';
 import Image from 'next/image';
 import { BannerFormFields } from 'pages';
 import { useRef, useState } from 'react';
@@ -9,6 +10,7 @@ import { useFormContext } from 'react-hook-form';
 
 const BannerPreview = () => {
   const [open, setOpen] = useState(false);
+  const plausible = usePlausible();
 
   const printRef = useRef<HTMLDivElement>(null);
 
@@ -38,6 +40,8 @@ const BannerPreview = () => {
       } else {
         window.open(data);
       }
+
+      plausible('generate-banner');
 
       reset({
         banner_background: 'bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500',
