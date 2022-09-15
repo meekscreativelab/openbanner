@@ -29,10 +29,10 @@ const Home: NextPage = () => {
   return (
     <App>
       <Head>
-        <title>OpenBanner – Simple informative twitter cover banner for those building in public</title>
+        <title>OpenBanner – Simple informative twitter cover banner for those who #buildinpublic</title>
         <meta
           name="title"
-          content="OpenBanner – Simple informative twitter cover banner for those building in public"
+          content="OpenBanner – Simple informative twitter cover banner for those who #buildinpublic"
         />
         <meta
           name="description"
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="OpenBanner – Simple informative twitter cover banner for those building in public"
+          content="OpenBanner – Simple informative twitter cover banner for those who #buildinpublic"
         />
         <meta
           property="og:description"
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
         <meta property="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:title"
-          content="OpenBanner – Simple informative twitter cover banner for those building in public"
+          content="OpenBanner – Simple informative twitter cover banner for those who #buildinpublic"
         />
         <meta
           property="twitter:description"
